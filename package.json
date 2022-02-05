@@ -1,7 +1,7 @@
 {
   "name": "bifrost",
   "version": "1.0.0",
-  "description": "",
+  "description": "🌤 Mai 2021   ✨ Backend   ⚙️ Frontend - check the frontend [repo](https://github.com/manon-boiteau/stock-front-Bifrost.git)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,8 +14,17 @@
     "cloudinary": "^1.25.1",
     "cors": "^2.8.5",
     "dotenv": "^9.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "express-formidable": "^1.2.0",
-    "mongoose": "^5.12.7"
-  }
+    "mongoose": "^5.13.14"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manon-boiteau/stock-back-Bifrost.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manon-boiteau/stock-back-Bifrost/issues"
+  },
+  "homepage": "https://github.com/manon-boiteau/stock-back-Bifrost#readme"
 }

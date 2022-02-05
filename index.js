@@ -1,4 +1,3 @@
-/* Packages import */
 const express = require("express");
 const formidable = require("express-formidable");
 const mongoose = require("mongoose");
@@ -6,25 +5,21 @@ const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
 require("dotenv").config();
 
-/* Packages initialization */
 const app = express();
 app.use(formidable());
 app.use(cors());
 
-/* Cloudinary initialization */
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-/* Connection with BDD */
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-/* Model */
 const Product = mongoose.model("Product", {
   product_name: String,
   product_brand: String,
@@ -33,13 +28,11 @@ const Product = mongoose.model("Product", {
   product_image: { type: mongoose.Schema.Types.Mixed, default: {} },
 });
 
-/* ----------------------------- */
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Welcome to Stock Management API by Manon Boiteau for Bifröst! 🥳",
   });
 });
-/* ----------------------------- */
 
 // 1 - Create a product
 app.post("/create", async (req, res) => {
@@ -188,8 +181,6 @@ app.post("/delete/:id", async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 });
-
-/* ----------------------------- */
 
 app.all("*", (req, res) => {
   res.status(404).json({ message: "This endpoint does not exist." });
